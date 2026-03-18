@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .background {
+            background-image: url('DylanNuttComingSoon.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            position: relative;
+        }
+        .coming-soon {
+            font-size: 3em;
+            opacity: 0;
+            transition: opacity 1s, transform 0.5s;
+            transform: scale(1);
+        }
+        .email-link:hover .coming-soon {
+            opacity: 1;
+            transform: scale(1.2);
+        }
+        .email-link {
+            text-decoration: none;
+            color: white;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+        <a href="mailto:example@example.com" class="email-link">
+            <div class="coming-soon">Coming Soon</div>
+        </a>
+    </div>
+</body>
+</html>
