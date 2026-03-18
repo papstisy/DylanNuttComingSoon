@@ -3,46 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon</title>
+    <title>Dylan Nutt Coming Soon</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body, html {
             height: 100%;
-            margin: 0;
-            font-family: Arial, sans-serif;
+            width: 100%;
+            overflow: hidden;
         }
-        .background {
+
+        .container {
             background-image: url('DylanNuttComingSoon.jpg');
             background-size: cover;
             background-position: center;
-            height: 100%;
+            background-repeat: no-repeat;
+            height: 100vh;
+            width: 100vw;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: white;
             position: relative;
         }
-        .coming-soon {
-            font-size: 3em;
-            opacity: 0;
-            transition: opacity 1s, transform 0.5s;
-            transform: scale(1);
-        }
-        .email-link:hover .coming-soon {
-            opacity: 1;
-            transform: scale(1.2);
-        }
+
         .email-link {
             text-decoration: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .coming-soon {
+            font-size: 2.5rem;
+            font-weight: bold;
             color: white;
-            position: absolute;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+            transition: all 0.3s ease;
+            letter-spacing: 2px;
+        }
+
+        .email-link:hover .coming-soon {
+            font-size: 3.5rem;
+            text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.9);
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .coming-soon {
+                font-size: 1.8rem;
+            }
+
+            .email-link:hover .coming-soon {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .coming-soon {
+                font-size: 1.4rem;
+            }
+
+            .email-link:hover .coming-soon {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="background">
-        <a href="mailto:example@example.com" class="email-link">
+    <div class="container">
+        <a href="javascript:location.href='mailto:' + atob('bWlrZXRpbWUyQGdtYWlsLmNvbQ==');" class="email-link">
             <div class="coming-soon">Coming Soon</div>
         </a>
     </div>
+
+    <script>
+        // Additional obfuscation to hide email from basic scrapers
+        document.addEventListener('DOMContentLoaded', function() {
+            const link = document.querySelector('.email-link');
+            const encodedEmail = 'bWlrZXRpbWUyQGdtYWlsLmNvbQ==';
+            const decodedEmail = atob(encodedEmail);
+            link.href = 'mailto:' + decodedEmail;
+        });
+    </script>
 </body>
 </html>
