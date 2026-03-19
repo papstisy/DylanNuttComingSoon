@@ -6,24 +6,45 @@
     <title>Coming Soon</title>
     <style>
         body {
-            font-size: 14px; /* Reduced overall font size */
-            padding: 20px; /* Added padding around body */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             margin: 0;
-            box-sizing: border-box;
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
         }
-        h1, h2, h3, p {
-            margin-bottom: 1em; /* Added margin between elements */
+        .container {
+            text-align: center;
+            color: white;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
         }
-        @media (max-width: 600px) {
-            body {
-                font-size: 12px; /* Smaller font size on mobile */
-                padding: 10px; /* Less padding on mobile */
-            }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            transition: transform 0.3s;
+        }
+        h1:hover {
+            transform: scale(1.1);
+        }
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
         }
     </style>
 </head>
 <body>
-    <h1>Welcome to My Upcoming Project</h1>
-    <p>This site is currently under construction.</p>
+    <div class="container">
+        <h1>Welcome!</h1>
+        <h2>Coming Soon</h2>
+        <img src="DylanNuttComingSoon.jpg" alt="Coming Soon Image">
+    </div>
 </body>
 </html>
